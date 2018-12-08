@@ -100,7 +100,14 @@
                 self.progresslayer.frame = CGRectMake(0, 0, 0, 3);
             });
         }
-    }else{
+    }else if ([keyPath isEqualToString:@"title"]) {
+        if (object == self.webView) {
+            self.title = self.webView.title;
+        } else {
+            [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+        }
+    }
+    else{
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
 }
@@ -109,10 +116,6 @@
 //拦截网页加载，主动发送请求
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler{
     
-    
-    
-    NSString* title = webView.title ;
-    NSLog(@"title %@",title);
     NSString *requestString = navigationAction.request.URL.absoluteString;
     if ([requestString hasPrefix:@"myweb:imageClick:"]) {
         //获取单个照片地址
@@ -181,13 +184,6 @@
     self.backItem = backItem;
     [backView addSubview:backItem];
     
-//    UIButton * closeItem = [[UIButton alloc]initWithFrame:CGRectMake(44+12, 0, 44, 44)];
-//    [closeItem setTitle:@"关闭" forState:UIControlStateNormal];
-//    [closeItem setTitleColor:[UIColor colorWithRed:0.000 green:0.502 blue:1.000 alpha:1.000] forState:UIControlStateNormal];
-//    [closeItem addTarget:self action:@selector(clickedCloseItem:) forControlEvents:UIControlEventTouchUpInside];
-//    closeItem.hidden = YES;
-//    self.closeItem = closeItem;
-//    [backView addSubview:closeItem];
     
     UIBarButtonItem * leftItemBar = [[UIBarButtonItem alloc]initWithCustomView:backView];
     self.navigationItem.leftBarButtonItem = leftItemBar;
@@ -219,6 +215,11 @@
         //网页添加长按手势
         UILongPressGestureRecognizer* longPressed = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPressed:)];
         longPressed.delegate = self;
+        //监听tite属性
+        [_webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:NULL];
+
+        
+        
         [_webView addGestureRecognizer:longPressed];
     }
     return _webView;
@@ -274,6 +275,7 @@
     }
     return _webImageView;
 }
+
 
 
 
