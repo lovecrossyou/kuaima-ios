@@ -203,7 +203,7 @@
 
 #pragma mark - 懒加载
 - (WKWebView *)webView{
-    NSString* url = @"https://www.xiteng.com/xitenggamenode/#/rank/page?app_key=b5958b665e0b4d8cae77d28e1ad3f521&signature=5176735955812CE08EBBEC445DE706D0&access_token=d0dd5d9d961241d7a49f540097021726" ;
+    NSString* url = @"https://www.xiteng.com/xitenggamenode/#/" ;
     if (_webView == nil) {
         _webView = [[WKWebView alloc]initWithFrame:CGRectMake(0, 63, self.view.frame.size.width, self.view.frame.size.height - 64)];
     
