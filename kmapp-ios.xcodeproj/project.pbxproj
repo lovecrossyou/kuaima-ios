@@ -1,0 +1,364 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7FE35E9321BB4C84006AB16D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE35E9221BB4C84006AB16D /* AppDelegate.m */; };
+		7FE35E9921BB4C84006AB16D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE35E9721BB4C84006AB16D /* Main.storyboard */; };
+		7FE35E9B21BB4C86006AB16D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FE35E9A21BB4C86006AB16D /* Assets.xcassets */; };
+		7FE35E9E21BB4C86006AB16D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE35E9C21BB4C86006AB16D /* LaunchScreen.storyboard */; };
+		7FE35EA121BB4C86006AB16D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE35EA021BB4C86006AB16D /* main.m */; };
+		7FE35EA921BB4CF4006AB16D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE35EA821BB4CF4006AB16D /* WebKit.framework */; };
+		7FE35EAE21BB5121006AB16D /* ZWWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE35EAB21BB5121006AB16D /* ZWWebViewVC.m */; };
+		7FE35EAF21BB5121006AB16D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE35EAD21BB5121006AB16D /* ViewController.m */; };
+		7FE35EB121BB5710006AB16D /* back_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FE35EB021BB570F006AB16D /* back_arrow@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7FE35E8E21BB4C84006AB16D /* kmapp-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kmapp-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FE35E9121BB4C84006AB16D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7FE35E9221BB4C84006AB16D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7FE35E9821BB4C84006AB16D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7FE35E9A21BB4C86006AB16D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7FE35E9D21BB4C86006AB16D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7FE35E9F21BB4C86006AB16D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FE35EA021BB4C86006AB16D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7FE35EA821BB4CF4006AB16D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		7FE35EAA21BB5121006AB16D /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		7FE35EAB21BB5121006AB16D /* ZWWebViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWWebViewVC.m; sourceTree = "<group>"; };
+		7FE35EAC21BB5121006AB16D /* ZWWebViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWWebViewVC.h; sourceTree = "<group>"; };
+		7FE35EAD21BB5121006AB16D /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7FE35EB021BB570F006AB16D /* back_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_arrow@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7FE35E8B21BB4C84006AB16D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FE35EA921BB4CF4006AB16D /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7FE35E8521BB4C84006AB16D = {
+			isa = PBXGroup;
+			children = (
+				7FE35E9021BB4C84006AB16D /* kmapp-ios */,
+				7FE35E8F21BB4C84006AB16D /* Products */,
+				7FE35EA721BB4CF4006AB16D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		7FE35E8F21BB4C84006AB16D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7FE35E8E21BB4C84006AB16D /* kmapp-ios.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7FE35E9021BB4C84006AB16D /* kmapp-ios */ = {
+			isa = PBXGroup;
+			children = (
+				7FE35EB021BB570F006AB16D /* back_arrow@2x.png */,
+				7FE35EAA21BB5121006AB16D /* ViewController.h */,
+				7FE35EAD21BB5121006AB16D /* ViewController.m */,
+				7FE35EAC21BB5121006AB16D /* ZWWebViewVC.h */,
+				7FE35EAB21BB5121006AB16D /* ZWWebViewVC.m */,
+				7FE35E9121BB4C84006AB16D /* AppDelegate.h */,
+				7FE35E9221BB4C84006AB16D /* AppDelegate.m */,
+				7FE35E9721BB4C84006AB16D /* Main.storyboard */,
+				7FE35E9A21BB4C86006AB16D /* Assets.xcassets */,
+				7FE35E9C21BB4C86006AB16D /* LaunchScreen.storyboard */,
+				7FE35E9F21BB4C86006AB16D /* Info.plist */,
+				7FE35EA021BB4C86006AB16D /* main.m */,
+			);
+			path = "kmapp-ios";
+			sourceTree = "<group>";
+		};
+		7FE35EA721BB4CF4006AB16D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7FE35EA821BB4CF4006AB16D /* WebKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7FE35E8D21BB4C84006AB16D /* kmapp-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7FE35EA421BB4C86006AB16D /* Build configuration list for PBXNativeTarget "kmapp-ios" */;
+			buildPhases = (
+				7FE35E8A21BB4C84006AB16D /* Sources */,
+				7FE35E8B21BB4C84006AB16D /* Frameworks */,
+				7FE35E8C21BB4C84006AB16D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "kmapp-ios";
+			productName = "kmapp-ios";
+			productReference = 7FE35E8E21BB4C84006AB16D /* kmapp-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7FE35E8621BB4C84006AB16D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = com.huibei;
+				TargetAttributes = {
+					7FE35E8D21BB4C84006AB16D = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 7FE35E8921BB4C84006AB16D /* Build configuration list for PBXProject "kmapp-ios" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7FE35E8521BB4C84006AB16D;
+			productRefGroup = 7FE35E8F21BB4C84006AB16D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7FE35E8D21BB4C84006AB16D /* kmapp-ios */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7FE35E8C21BB4C84006AB16D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FE35E9E21BB4C86006AB16D /* LaunchScreen.storyboard in Resources */,
+				7FE35EB121BB5710006AB16D /* back_arrow@2x.png in Resources */,
+				7FE35E9B21BB4C86006AB16D /* Assets.xcassets in Resources */,
+				7FE35E9921BB4C84006AB16D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7FE35E8A21BB4C84006AB16D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FE35EA121BB4C86006AB16D /* main.m in Sources */,
+				7FE35E9321BB4C84006AB16D /* AppDelegate.m in Sources */,
+				7FE35EAF21BB5121006AB16D /* ViewController.m in Sources */,
+				7FE35EAE21BB5121006AB16D /* ZWWebViewVC.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7FE35E9721BB4C84006AB16D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7FE35E9821BB4C84006AB16D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7FE35E9C21BB4C86006AB16D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7FE35E9D21BB4C86006AB16D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7FE35EA221BB4C86006AB16D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7FE35EA321BB4C86006AB16D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7FE35EA521BB4C86006AB16D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VE3N87A48U;
+				INFOPLIST_FILE = "kmapp-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.huibei.kmapp-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		7FE35EA621BB4C86006AB16D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VE3N87A48U;
+				INFOPLIST_FILE = "kmapp-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.huibei.kmapp-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7FE35E8921BB4C84006AB16D /* Build configuration list for PBXProject "kmapp-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FE35EA221BB4C86006AB16D /* Debug */,
+				7FE35EA321BB4C86006AB16D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7FE35EA421BB4C86006AB16D /* Build configuration list for PBXNativeTarget "kmapp-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7FE35EA521BB4C86006AB16D /* Debug */,
+				7FE35EA621BB4C86006AB16D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7FE35E8621BB4C84006AB16D /* Project object */;
+}
