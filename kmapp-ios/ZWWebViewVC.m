@@ -6,6 +6,9 @@
 //  Copyright © 2017年 zhengyawei. All rights reserved.
 //
 
+#define SCREEN_WIDTH self.view.bounds.size.width
+#define SCREEN_HEIGHT self.view.bounds.size.height
+
 #import "ZWWebViewVC.h"
 #import <WebKit/WebKit.h>
 
@@ -41,7 +44,14 @@
     [self.view addSubview:self.webView];
     [self.progressView.layer addSublayer:self.progresslayer];
     //设置导航栏item样式
-    [self setupNavbarItem];
+//    [self setupNavbarItem];
+//    self.edgesForExtendedLayout = 0;
+//    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+    
+    UIView* stateView = [[UIView alloc] initWithFrame:CGRectMake(0, -20, SCREEN_WIDTH, 20)];
+    [self.navigationController.navigationBar addSubview:stateView];
+    stateView.backgroundColor = [UIColor purpleColor];
+    
 }
 - (void)dealloc{
     [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
@@ -176,10 +186,7 @@
     UIView * backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 44)];
     UIButton * backItem = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 56, 44)];
     [backItem setImage:[UIImage imageNamed:@"back_arrow"] forState:UIControlStateNormal];
-    [backItem setImageEdgeInsets:UIEdgeInsetsMake(0, -15, 0, 0)];
-    [backItem setTitle:@"返回" forState:UIControlStateNormal];
-    [backItem setTitleEdgeInsets:UIEdgeInsetsMake(0, -15, 0, 0)];
-    [backItem setTitleColor:[UIColor colorWithRed:0.000 green:0.502 blue:1.000 alpha:1.000] forState:UIControlStateNormal];
+    [backItem setImageEdgeInsets:UIEdgeInsetsMake(0, -45, 0, 0)];
     [backItem addTarget:self action:@selector(clickedBackItem:) forControlEvents:UIControlEventTouchUpInside];
     self.backItem = backItem;
     [backView addSubview:backItem];
@@ -203,9 +210,9 @@
 
 #pragma mark - 懒加载
 - (WKWebView *)webView{
-    NSString* url = @"https://www.xiteng.com/xitenggamenode/#/" ;
+    NSString* url = @"http://47.94.209.108:7003/yy/#/" ;
     if (_webView == nil) {
-        _webView = [[WKWebView alloc]initWithFrame:CGRectMake(0, 63, self.view.frame.size.width, self.view.frame.size.height - 64)];
+        _webView = [[WKWebView alloc]initWithFrame:self.view.frame];
     
         [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
         /*****************注**********************/
@@ -238,7 +245,7 @@
     if (_progresslayer == nil) {
         _progresslayer = [CALayer layer];
         _progresslayer.frame = CGRectMake(0, 0, 0, 3);
-        _progresslayer.backgroundColor = [UIColor blueColor].CGColor;
+        _progresslayer.backgroundColor = [UIColor colorWithRed:1 green:0.525 blue:0.219 alpha:1].CGColor;
     }
     return _progresslayer;
 }
@@ -246,7 +253,7 @@
 - (UIView *)maskView{
     if (_maskView == nil) {
         _maskView = [[UIView alloc]initWithFrame:self.view.bounds];
-        _maskView.backgroundColor = [UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:0.9];
+        _maskView.backgroundColor = [UIColor colorWithRed:1 green:0.525 blue:0.219  alpha:0.9];
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(removeBigImage)];
         [_maskView addGestureRecognizer:tap];
     }
@@ -275,7 +282,6 @@
     }
     return _webImageView;
 }
-
 
 
 
