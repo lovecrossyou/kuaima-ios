@@ -44,14 +44,9 @@
     [self.view addSubview:self.webView];
     [self.progressView.layer addSublayer:self.progresslayer];
     //设置导航栏item样式
-//    [self setupNavbarItem];
-//    self.edgesForExtendedLayout = 0;
-//    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-    
-    UIView* stateView = [[UIView alloc] initWithFrame:CGRectMake(0, -20, SCREEN_WIDTH, 20)];
-    [self.navigationController.navigationBar addSubview:stateView];
-    stateView.backgroundColor = [UIColor purpleColor];
-    
+    [self setStatusBarBackgroundColor: [UIColor colorWithRed:255.0/255 green:134.0/255 blue:56.0/255 alpha:1]];
+    self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
+
 }
 - (void)dealloc{
     [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
@@ -180,21 +175,6 @@
 
 
 
-#pragma mark - Private
-//设置导航栏Item
-- (void)setupNavbarItem{
-    UIView * backView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 44)];
-    UIButton * backItem = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 56, 44)];
-    [backItem setImage:[UIImage imageNamed:@"back_arrow"] forState:UIControlStateNormal];
-    [backItem setImageEdgeInsets:UIEdgeInsetsMake(0, -45, 0, 0)];
-    [backItem addTarget:self action:@selector(clickedBackItem:) forControlEvents:UIControlEventTouchUpInside];
-    self.backItem = backItem;
-    [backView addSubview:backItem];
-    
-    
-    UIBarButtonItem * leftItemBar = [[UIBarButtonItem alloc]initWithCustomView:backView];
-    self.navigationItem.leftBarButtonItem = leftItemBar;
-}
 //显示照片
 - (void)showImageWithUrlString:(NSString *)urlString{
     [[UIApplication sharedApplication].keyWindow addSubview:self.maskView];
@@ -282,6 +262,17 @@
     }
     return _webImageView;
 }
+
+/*设置状态栏背景颜色
+@param color 设置颜色
+*/
+- (void)setStatusBarBackgroundColor:(UIColor *)color {
+    UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+    if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
+        statusBar.backgroundColor = color;
+    }
+}
+
 
 
 
