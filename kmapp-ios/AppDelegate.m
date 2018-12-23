@@ -30,14 +30,18 @@
     }
     [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
     NSString* channel = @"App Store" ;
-    NSString* appKey = @"0f4f36e4d5c7a6d4a0e871ab" ;
+    NSString* appKey = @"70023135ee111faf1b9f90d3" ;
     NSString* advertisingId = nil ;
-    NSString* isProduction = false ;
+    BOOL isProduction = NO ;
     [JPUSHService setupWithOption:launchOptions appKey:appKey
                           channel:channel
                  apsForProduction:isProduction
             advertisingIdentifier:advertisingId];
     
+    [JPUSHService setAlias:@"lovecross" completion:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {
+
+        NSLog(@"setAlias iResCode %ld ,iAlias %@",(long)iResCode,iAlias);
+    } seq:1];
     
     _window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     ZWWebViewVC *vc = [[ZWWebViewVC alloc]init];
