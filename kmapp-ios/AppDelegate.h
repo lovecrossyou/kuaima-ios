@@ -18,7 +18,6 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate,JPUSHRegisterDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
-
+-(void)registeToJPush:(NSString*)alias;
 @end
 

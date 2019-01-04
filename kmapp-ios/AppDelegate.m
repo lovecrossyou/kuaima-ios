@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ZWWebViewVC.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 
 
 
@@ -40,18 +41,20 @@
                           channel:channel
                  apsForProduction:isProduction
             advertisingIdentifier:advertisingId];
-    
-    [JPUSHService setAlias:@"lovecross" completion:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {
-
-        NSLog(@"setAlias iResCode %ld ,iAlias %@",(long)iResCode,iAlias);
-    } seq:1];
-    
     _window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     ZWWebViewVC *vc = [[ZWWebViewVC alloc]init];
 //    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
     _window.rootViewController = vc;
     [_window makeKeyAndVisible];
     return YES;
+}
+
+
+#pragma mark - 极光注册
+-(void)registeToJPush:(NSString*)alias{
+    [JPUSHService setAlias:alias completion:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {
+        [SVProgressHUD showSuccessWithStatus:@"成功注册订单提醒!"];
+    } seq:1];
 }
 
 

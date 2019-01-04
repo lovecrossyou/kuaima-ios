@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6E6CAB349112467D53645376 /* Pods_kmapp_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF6AD39841AE3C83BB81C062 /* Pods_kmapp_ios.framework */; };
+		7F34CA5D21DFAEF800DE9EA0 /* myVoice.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7FE4BEEC21CF50B3000E6DF1 /* myVoice.m4a */; };
 		7FA6990921BEC24B008D3350 /* back_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FA6990821BEC24B008D3350 /* back_arrow.png */; };
 		7FE35E9321BB4C84006AB16D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE35E9221BB4C84006AB16D /* AppDelegate.m */; };
 		7FE35E9921BB4C84006AB16D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE35E9721BB4C84006AB16D /* Main.storyboard */; };
@@ -16,7 +17,6 @@
 		7FE35EA121BB4C86006AB16D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE35EA021BB4C86006AB16D /* main.m */; };
 		7FE35EA921BB4CF4006AB16D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE35EA821BB4CF4006AB16D /* WebKit.framework */; };
 		7FE35EAE21BB5121006AB16D /* ZWWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE35EAB21BB5121006AB16D /* ZWWebViewVC.m */; };
-		7FE4BEED21CF50B3000E6DF1 /* myVoice.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 7FE4BEEC21CF50B3000E6DF1 /* myVoice.m4a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -176,7 +176,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FE4BEED21CF50B3000E6DF1 /* myVoice.m4a in Resources */,
+				7F34CA5D21DFAEF800DE9EA0 /* myVoice.m4a in Resources */,
 				7FE35E9E21BB4C86006AB16D /* LaunchScreen.storyboard in Resources */,
 				7FA6990921BEC24B008D3350 /* back_arrow.png in Resources */,
 				7FE35E9B21BB4C86006AB16D /* Assets.xcassets in Resources */,

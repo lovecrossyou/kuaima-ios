@@ -11,8 +11,10 @@
 
 #import "ZWWebViewVC.h"
 #import <WebKit/WebKit.h>
+#import <SVProgressHUD/SVProgressHUD.h>
 
-@interface ZWWebViewVC ()<WKNavigationDelegate,UIGestureRecognizerDelegate,UIScrollViewDelegate>
+#import "AppDelegate.h"
+@interface ZWWebViewVC ()<WKNavigationDelegate,WKUIDelegate,UIGestureRecognizerDelegate,UIScrollViewDelegate,WKScriptMessageHandler>
 @property  (nonatomic,strong) WKWebView *webView;
 
 //进度条
@@ -46,11 +48,13 @@
     //设置导航栏item样式
     [self setStatusBarBackgroundColor: [UIColor colorWithRed:255.0/255 green:134.0/255 blue:56.0/255 alpha:1]];
     self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
-
+    [SVProgressHUD show];
 }
 - (void)dealloc{
     [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
     [self.webView removeFromSuperview];
+    
+    [self.webView.configuration.userContentController removeScriptMessageHandlerForName:@"dispatchAction"];
 }
 
 #pragma mark - Action
@@ -160,19 +164,23 @@
     [webView evaluateJavaScript:stringM completionHandler:nil];
     //注入自定义的js方法后别忘了调用 否则不会生效
     [webView evaluateJavaScript:@"getImages();" completionHandler:nil];
+    
+    [SVProgressHUD dismiss];
+
 }
 //网页已经开始加载调用
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(null_unspecified WKNavigation *)navigation{
-    
+   
+
 }
 //页面加载失败调用
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error{
+    [SVProgressHUD dismiss];
+
 }
 //当内容开始返回时调用，即服务器已经在想客服端发送网页数据
 - (void)webView:(WKWebView *)webView didCommitNavigation:(null_unspecified WKNavigation *)navigation{
 }
-
-
 
 
 //显示照片
@@ -192,11 +200,19 @@
 - (WKWebView *)webView{
     NSString* url = @"http://47.94.209.108:7003/yy/#/" ;
     if (_webView == nil) {
-        _webView = [[WKWebView alloc]initWithFrame:self.view.frame];
+        WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
+        WKUserContentController *userController = [[WKUserContentController alloc] init];
+        configuration.userContentController = userController;
     
+        _webView = [[WKWebView alloc]initWithFrame:self.view.frame configuration:configuration];
+
         [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
         /*****************注**********************/
         _webView.navigationDelegate = self;
+        _webView.UIDelegate = self;
+        
+        [userController addScriptMessageHandler:self name:@"dispatchAction"];
+
         //添加进度属性监听
         [_webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
         //网页添加长按手势
@@ -211,6 +227,32 @@
     }
     return _webView;
 }
+
+#pragma JS调用的OC回调方法
+- (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message{
+    if ([message.name isEqualToString:@"dispatchAction"]) {
+        
+        NSError *error;
+
+        NSDictionary* dictionary = (NSDictionary*)message.body ;
+        NSString *jsonStr = (NSString*)dictionary[@"data"];
+        NSData* jsonData = [jsonStr dataUsingEncoding:NSUTF8StringEncoding];
+        NSDictionary *actionDic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableLeaves error:&error];  ;
+        NSLog(@"当前的actionDic为： %@", actionDic);
+        [self actionHandler:actionDic];
+    }
+}
+
+#pragma mark - js消息处理
+-(void)actionHandler:(NSDictionary*)d{
+    if([d[@"type"] isEqualToString:@"registToJPush"]){
+        NSString* userAlia = d[@"data"];
+        //极光注册事件
+        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+        [appDelegate registeToJPush:userAlia];
+    }
+}
+
 //显示进度相关
 - (UIView *)progressView{
     if (_progressView == nil) {

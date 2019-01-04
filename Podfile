@@ -3,4 +3,5 @@ use_frameworks!
 
 target 'kmapp-ios' do
   pod 'JPush'
+  pod 'SVProgressHUD'
 end
