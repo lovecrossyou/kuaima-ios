@@ -13,7 +13,6 @@
 		7FE35E9321BB4C84006AB16D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE35E9221BB4C84006AB16D /* AppDelegate.m */; };
 		7FE35E9921BB4C84006AB16D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE35E9721BB4C84006AB16D /* Main.storyboard */; };
 		7FE35E9B21BB4C86006AB16D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FE35E9A21BB4C86006AB16D /* Assets.xcassets */; };
-		7FE35E9E21BB4C86006AB16D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FE35E9C21BB4C86006AB16D /* LaunchScreen.storyboard */; };
 		7FE35EA121BB4C86006AB16D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE35EA021BB4C86006AB16D /* main.m */; };
 		7FE35EA921BB4CF4006AB16D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FE35EA821BB4CF4006AB16D /* WebKit.framework */; };
 		7FE35EAE21BB5121006AB16D /* ZWWebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FE35EAB21BB5121006AB16D /* ZWWebViewVC.m */; };
@@ -27,14 +26,12 @@
 		7FE35E9221BB4C84006AB16D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7FE35E9821BB4C84006AB16D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7FE35E9A21BB4C86006AB16D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7FE35E9D21BB4C86006AB16D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7FE35E9F21BB4C86006AB16D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FE35EA021BB4C86006AB16D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7FE35EA821BB4CF4006AB16D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		7FE35EAB21BB5121006AB16D /* ZWWebViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWWebViewVC.m; sourceTree = "<group>"; };
 		7FE35EAC21BB5121006AB16D /* ZWWebViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWWebViewVC.h; sourceTree = "<group>"; };
 		7FE35EB221BBABF6006AB16D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		7FE35EB321BBABF6006AB16D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		7FE4BEE821CF2F67000E6DF1 /* kmapp-ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "kmapp-ios.entitlements"; sourceTree = "<group>"; };
 		7FE4BEEC21CF50B3000E6DF1 /* myVoice.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = myVoice.m4a; sourceTree = "<group>"; };
 		9F267DD3B8608B07DAB5C871 /* Pods-kmapp-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kmapp-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-kmapp-ios/Pods-kmapp-ios.release.xcconfig"; sourceTree = "<group>"; };
@@ -84,7 +81,6 @@
 				7FE35E9221BB4C84006AB16D /* AppDelegate.m */,
 				7FE35E9721BB4C84006AB16D /* Main.storyboard */,
 				7FE35E9A21BB4C86006AB16D /* Assets.xcassets */,
-				7FE35E9C21BB4C86006AB16D /* LaunchScreen.storyboard */,
 				7FE35E9F21BB4C86006AB16D /* Info.plist */,
 				7FE35EA021BB4C86006AB16D /* main.m */,
 			);
@@ -177,7 +173,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F34CA5D21DFAEF800DE9EA0 /* myVoice.m4a in Resources */,
-				7FE35E9E21BB4C86006AB16D /* LaunchScreen.storyboard in Resources */,
 				7FA6990921BEC24B008D3350 /* back_arrow.png in Resources */,
 				7FE35E9B21BB4C86006AB16D /* Assets.xcassets in Resources */,
 				7FE35E9921BB4C84006AB16D /* Main.storyboard in Resources */,
@@ -255,15 +250,6 @@
 				7FE35EB221BBABF6006AB16D /* zh-Hans */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		7FE35E9C21BB4C86006AB16D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				7FE35E9D21BB4C86006AB16D /* Base */,
-				7FE35EB321BBABF6006AB16D /* zh-Hans */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -388,11 +374,13 @@
 			baseConfigurationReference = 5399EAE3622A5619E35232E6 /* Pods-kmapp-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_ENTITLEMENTS = "kmapp-ios/kmapp-ios.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VYW4NN9SFF;
 				INFOPLIST_FILE = "kmapp-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -409,11 +397,13 @@
 			baseConfigurationReference = 9F267DD3B8608B07DAB5C871 /* Pods-kmapp-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_ENTITLEMENTS = "kmapp-ios/kmapp-ios.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VYW4NN9SFF;
 				INFOPLIST_FILE = "kmapp-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

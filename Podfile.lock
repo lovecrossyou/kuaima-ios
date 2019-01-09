@@ -2,17 +2,25 @@ PODS:
   - JCore (1.1.6)
   - JPush (3.0.7):
     - JCore (~> 1.1.6)
+  - LBLaunchImageAd (1.0.2):
+    - SDWebImage (~> 4.0.0)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
   - SVProgressHUD (2.2.2)
 
 DEPENDENCIES:
   - JPush
+  - LBLaunchImageAd
   - SVProgressHUD
 
 SPEC CHECKSUMS:
   JCore: 18fc8725124f26e55625eaf224659b3a999dcf63
   JPush: 111b79b8a0169ab8fd4c486dac3ed166ed69293e
+  LBLaunchImageAd: c77a64a5c6bd10f73ab778bd2559e527bfd1400a
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
 
-PODFILE CHECKSUM: dcd22acbea4c934f0f2f4a431d02e4a33a59356e
+PODFILE CHECKSUM: 8b7ca8501356b36330ff411fc09ae81aeb2775cc
 
 COCOAPODS: 1.1.1

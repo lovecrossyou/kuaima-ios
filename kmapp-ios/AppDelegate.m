@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "ZWWebViewVC.h"
 #import <SVProgressHUD/SVProgressHUD.h>
+#import "NSObject+LBLaunchImage.h"
+#import "LBLaunchImageAdView.h"
 
 
 
@@ -41,19 +43,63 @@
                           channel:channel
                  apsForProduction:isProduction
             advertisingIdentifier:advertisingId];
-    _window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    ZWWebViewVC *vc = [[ZWWebViewVC alloc]init];
-//    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
-    _window.rootViewController = vc;
-    [_window makeKeyAndVisible];
+    
+    
+//    _window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+//    ZWWebViewVC *vc = [[ZWWebViewVC alloc]init];
+//    _window.rootViewController = vc;
+//    [_window makeKeyAndVisible];
+    [self showLaunch];
     return YES;
 }
 
+#pragma mark - 启动页展示
+-(void)showLaunch{
+    __weak typeof(self) weakSelf = self;
+    [NSObject makeLBLaunchImageAdView:^(LBLaunchImageAdView *imgAdView) {
+        //设置广告的类型
+        imgAdView.getLBlaunchImageAdViewType(LogoAdType);
+        //设置本地启动图片
+        //imgAdView.localAdImgName = @"qidong.gif";
+        imgAdView.imgUrl = @"http://img.zcool.cn/community/01316b5854df84a8012060c8033d89.gif";
+        //自定义跳过按钮
+        imgAdView.skipBtn.backgroundColor = [UIColor blackColor];
+        //各种点击事件的回调
+        
+        imgAdView.clickBlock = ^(clickType type){
+            switch (type) {
+                case clickAdType:{
+                    NSLog(@"点击广告回调");
+                    [weakSelf goMainPage];
+                }
+                    break;
+                case skipAdType:
+                    NSLog(@"点击跳过回调");
+                    [weakSelf goMainPage];
+                    break;
+                case overtimeAdType:
+                    NSLog(@"倒计时完成后的回调");
+                    [weakSelf goMainPage];
+                    break;
+                default:
+                    break;
+            }
+        };
+        
+    }];
+}
+
+#pragma mark - 进入主界面
+-(void)goMainPage{
+    ZWWebViewVC *vc = [[ZWWebViewVC alloc]init];
+    self.window.rootViewController = vc ;
+    [self.window makeKeyAndVisible];
+}
 
 #pragma mark - 极光注册
 -(void)registeToJPush:(NSString*)alias{
     [JPUSHService setAlias:alias completion:^(NSInteger iResCode, NSString *iAlias, NSInteger seq) {
-        [SVProgressHUD showSuccessWithStatus:@"成功注册订单提醒!"];
+//        [SVProgressHUD showSuccessWithStatus:@"成功注册订单提醒!"];
     } seq:1];
 }
 

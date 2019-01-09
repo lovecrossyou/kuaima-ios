@@ -163,7 +163,7 @@
     //[webView stringByEvaluatingJavaScriptFromString:stringM];//UIWebView   UIWebView的注入方式
     [webView evaluateJavaScript:stringM completionHandler:nil];
     //注入自定义的js方法后别忘了调用 否则不会生效
-    [webView evaluateJavaScript:@"getImages();" completionHandler:nil];
+//    [webView evaluateJavaScript:@"getImages();" completionHandler:nil];
     
     [SVProgressHUD dismiss];
 
